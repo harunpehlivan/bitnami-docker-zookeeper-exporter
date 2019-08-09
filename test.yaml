@@ -1,0 +1,38 @@
+## This is test deployment for Kubernetes platforms.
+## This is _not_ intended to be used in production.
+##
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: test-zookeeper-exporter
+  name: test-zookeeper-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-zookeeper-exporter
+  template:
+    metadata:
+      labels:
+        app: test-zookeeper-exporter
+    spec:
+      containers:
+      - image: bitnami/zookeeper-exporter
+        name: zookeeper-exporter
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: test-zookeeper-exporter
+  name: test-zookeeper-exporter
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: test-zookeeper-exporter
+  sessionAffinity: None
+  type: ClusterIP

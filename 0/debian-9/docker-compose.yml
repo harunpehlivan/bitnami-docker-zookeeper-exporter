@@ -1,0 +1,6 @@
+version: '2'
+services:
+  zookeeper-exporter:
+    image: bitnami/zookeeper-exporter:0
+    ports:
+      - 8080:8080
