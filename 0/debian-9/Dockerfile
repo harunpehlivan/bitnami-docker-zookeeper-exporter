@@ -9,7 +9,7 @@ RUN wget -nc -P /tmp/bitnami/pkg/cache/ https://downloads.bitnami.com/files/stac
     rm -rf /tmp/bitnami/pkg/cache/zookeeper-exporter-0.1.1-0-linux-amd64-debian-9.tar.gz
 
 ENV BITNAMI_APP_NAME="zookeeper-exporter" \
-    BITNAMI_IMAGE_VERSION="0.1.1-debian-9-r2" \
+    BITNAMI_IMAGE_VERSION="0.1.1-debian-9-r3" \
     PATH="/opt/bitnami/zookeeper-exporter/bin:$PATH"
 
 EXPOSE 8080
